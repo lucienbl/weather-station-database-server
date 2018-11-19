@@ -15,7 +15,7 @@ setInterval(async () => {
 	    response = JSON.parse(data.text);
 	  });
 	db.push(`/${Date.now()}`, response);
-}, 600000);
+}, 60000); // one hour = 600000
 
 
 app.get('/', function (req, res) {

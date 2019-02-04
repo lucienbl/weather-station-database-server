@@ -4,12 +4,14 @@ const superagent = require('superagent');
 var JsonDB = require('node-json-db');
 var db = new JsonDB("db", true, false);
 
+const ip = 'http://172.16.3.6'
+
 let response;
 
 setInterval(async () => {
 	console.log("Store data !");
 	await superagent
-	  .get('http://172.16.3.6/data')
+	  .get(`${ip}/data`)
 	  .set('accept', 'json')
 	  .end((err, data) => {
 	    response = JSON.parse(data.text);

@@ -9,7 +9,7 @@ let response;
 setInterval(async () => {
 	console.log("Store data !");
 	await superagent
-	  .get('https://raw.githubusercontent.com/lucienbl/weather-station-api-response-simulator/master/api.json')
+	  .get('http://172.16.3.6/data')
 	  .set('accept', 'json')
 	  .end((err, data) => {
 	    response = JSON.parse(data.text);
